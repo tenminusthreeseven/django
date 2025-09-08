@@ -31,13 +31,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Default Django apps...
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Tailwind + live reload
+    'tailwind',
+      # 👈 we’ll create this app next
+    'django_browser_reload',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -47,7 +54,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Tailwind live reload
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
+
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -120,3 +131,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Tailwind configuration
+TAILWIND_APP_NAME = 'theme'
+
+# Path to npm (Windows)
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+
