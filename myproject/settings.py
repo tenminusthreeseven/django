@@ -137,3 +137,6 @@ TAILWIND_APP_NAME = 'theme'
 # Path to npm (Windows)
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
+
+TAILWIND_APP_NAME = 'theme'
+
